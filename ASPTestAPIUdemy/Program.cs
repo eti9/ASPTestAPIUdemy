@@ -8,7 +8,9 @@ using Serilog;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Configuration.AddJsonFile("ConnexionStrings.json",
+        optional: true,
+        reloadOnChange: true);
 //Connection string and DB context:
 var connectionString = builder.Configuration.GetConnectionString("HotelListingDbConnectionString");
 builder.Services.AddDbContext<HotelListingDbContext>(options =>

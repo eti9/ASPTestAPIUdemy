@@ -3,6 +3,7 @@ using ASPTestAPIUdemy.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ASPTestAPIUdemy.Migrations
 {
     [DbContext(typeof(HotelListingDbContext))]
-    partial class HotelListingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230209203231_SeededCountriedAndHotels")]
+    partial class SeededCountriedAndHotels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -114,14 +117,6 @@ namespace ASPTestAPIUdemy.Migrations
                             CountryId = 3,
                             Name = "Hotel n3",
                             Rating = 5.0
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Adresse = "1 Street Greatest",
-                            CountryId = 1,
-                            Name = "The best hotel",
-                            Rating = 4.2000000000000002
                         });
                 });
 
