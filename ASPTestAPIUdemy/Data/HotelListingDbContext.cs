@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 
 namespace ASPTestAPIUdemy.Data
 {
@@ -6,7 +7,9 @@ namespace ASPTestAPIUdemy.Data
     {
         public HotelListingDbContext(DbContextOptions options) : base(options)
         {
-
+           
         }
+        public DbSet<Hotel> Hotels { get; set; }
+        public DbSet<Country> Countries { get; set; }
     }
 }
