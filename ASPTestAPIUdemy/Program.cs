@@ -1,6 +1,7 @@
 
 
 
+using ASPTestAPIUdemy.Data;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+//Connection string and DB context:
 var connectionString = builder.Configuration.GetConnectionString("HotelListingDbConnectionString");
 builder.Services.AddDbContext<HotelListingDbContext>(options =>
 {
